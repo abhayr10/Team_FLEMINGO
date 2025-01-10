@@ -1,2 +1,1 @@
-# Team_FLEMINGO
-Community-Driven  Water Pollution Awareness Website
+# Team_FLEMINGO - Community-Driven  Water Pollution Awareness Website
