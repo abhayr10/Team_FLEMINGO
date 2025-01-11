@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EcoAware</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link href="https://fonts.cdnfonts.com/css/poppins" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background: #f4f4f4;
+        }
+
+        .navigation {
+            background: #fff;
+            height: 80px;
+            width: 100%;
+            padding: 0 50px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: #333;
+        }
+
+        .navigation ul {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+        }
+
+        .navigation ul li a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+        }
+
+        .btnLogin-popup {
+            padding: 8px 20px;
+            background: #4CAF50;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: 500;
+        }
+
+        /* News Section Styles */
+        .news-section {
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        .news-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 30px;
+        }
+
+        .news-card {
+            background: #fff;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .news-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .news-image {
+            width: 100%;
+            height: 200px;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .news-content {
+            padding: 20px;
+        }
+
+        .news-date {
+            color: #666;
+            font-size: 0.9em;
+            margin-bottom: 10px;
+        }
+
+        .news-title {
+            font-size: 1.2em;
+            color: #333;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+
+        .news-excerpt {
+            color: #666;
+            font-size: 0.95em;
+            line-height: 1.5;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2em;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        /* Keep existing cover_box and form styles */
+        .cover_box {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: #fff;
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 0 30px rgba(0,0,0,0.2);
+            display: none;
+        }
+
+        /* Add responsive design */
+        @media (max-width: 768px) {
+            .navigation {
+                padding: 0 20px;
+            }
+            
+            .news-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="navigation">
+            <label class="logo">EcoAware</label>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Contact</a></li>
+                <li><button type="submit" class="btn" onclick="window.location.href = 'http://localhost:5173/Login';">Login</button></li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- News Section -->
+    <section class="news-section">
+        <h2 class="section-title">Latest Environmental News</h2>
+        <div class="news-grid">
+            <article class="news-card">
+                <div class="news-image" style="background-image: url('/api/placeholder/400/200')"></div>
+                <div class="news-content">
+                    <div class="news-date">January 10, 2025</div>
+                    <h3 class="news-title">Global Air Quality Index Shows Concerning Trends</h3>
+                    <p class="news-excerpt">Recent data reveals that urban air pollution levels continue to rise in major cities worldwide, with particulate matter exceeding WHO guidelines by 50%.</p>
+                </div>
+            </article>
+
+            <article class="news-card">
+                <div class="news-image" style="background-image: url('/api/placeholder/400/200')"></div>
+                <div class="news-content">
+                    <div class="news-date">January 9, 2025</div>
+                    <h3 class="news-title">New Technology for Water Pollution Detection</h3>
+                    <p class="news-excerpt">Scientists develop advanced sensors capable of detecting microplastics and chemical pollutants in water bodies with 99% accuracy.</p>
+                </div>
+            </article>
+
+            <article class="news-card">
+                <div class="news-image" style="background-image: url('/api/placeholder/400/200')"></div>
+                <div class="news-content">
+                    <div class="news-date">January 8, 2025</div>
+                    <h3 class="news-title">Community Initiative Reduces Local Pollution</h3>
+                    <p class="news-excerpt">Local community's waste management program shows promising results, reducing plastic pollution by 60% in coastal areas.</p>
+                </div>
+            </article>
+        </div>
+    </section>
+
+    <!-- Keep existing login/register form -->
+    <div class="cover_box">
+        <span class="icon-close"><ion-icon name="close-outline"></ion-icon></span>
+        <div class="form-box" id="login">
+            <h2>Login</h2>
+            <form action="#">
+                <div class="input-box">
+                    <span class="icon"><ion-icon name="mail-outline"></ion-icon></span>
+                    <input type="email" required>
+                    <label>Email</label>
+                </div>
+                <div class="input-box">
+                    <span class="icon"><ion-icon name="lock-closed-outline"></ion-icon></span>
+                    <input type="Password" required>
+                    <label>Password</label>
+                </div>
+                <div class="remember-forget">
+                    <label><input type="checkbox">Remember me</label>
+                    <a href="#">Forgot password?</a>
+                </div>
+                <button type="submit" class="btn" onclick="window.location.href = 'http://localhost:5173/dashboard';">Login</button>
+                <div class="login-register">
+                    <p>Don't have an account?<a href="#" class="register-link">Register</a></p>
+                </div>
+            </form>
+        </div>
+
+        <div class="form-box register">
+            <h2>Register</h2>
+            <form action="#">
+                <div class="input-box">
+                    <span class="icon"><ion-icon name="person-outline"></ion-icon></span>
+                    <input type="text" required>
+                    <label>Name</label>
+                </div>
+                <div class="input-box">
+                    <span class="icon"><ion-icon name="call-outline"></ion-icon></span>
+                    <input type="tel" required>
+                    <label>Phone Number</label>
+                </div>
+                <div class="input-box">
+                    <span class="icon"><ion-icon name="mail-outline"></ion-icon></span>
+                    <input type="email" required>
+                    <label>Email</label>
+                </div>
+                <div class="input-box">
+                    <span class="icon"><ion-icon name="lock-closed-outline"></ion-icon></span>
+                    <input type="Password" required>
+                    <label>Password</label>
+                </div>
+                <div class="remember-forget">
+                    <label><input type="checkbox">Agree to terms and conditions</label>
+                </div>
+                <button type="submit" class="btn">Register</button>
+                <div class="login-register">
+                    <p>Already have an account? <a href="#" class="login-link">Login</a></p>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</body>
+</html>
